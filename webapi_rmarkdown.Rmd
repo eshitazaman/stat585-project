@@ -1,6 +1,6 @@
 ---
 title: "webapi"
-author: "Coskun Erden"
+author: "Coskun Erden, Alex Cleveringa, Eshita Zaman"
 date: "4/9/2022"
 output:
   word_document: default
