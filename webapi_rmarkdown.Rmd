@@ -24,8 +24,9 @@ Note: country and source cannot be put together in the search parameter.
 
 ```{r}
 url <- "https://newsapi.org/v2/"
+token <- #your API_KEY
 req_data <- httr::GET(
-  paste0(url, "top-headlines?country =us&category=sports&apiKey=f8acc8a2a90845d5b57ab446ba1d9827")
+  paste0(url, "top-headlines?country =us&category=sports&apiKey=token")
 )
 tr_news <- httr::content(req_data, as = "parsed")
 str(tr_news)
