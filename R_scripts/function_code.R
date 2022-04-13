@@ -7,7 +7,7 @@ library(lubridate)
 
 
 url <- "https://newsapi.org/v2/"
-API = "f8acc8a2a90845d5b57ab446ba1d9827"
+API = #apikey
 
 news_project <- function(url,API,Country=NULL,Source=NULL,Category=NULL,Newstype=NULL,from_date=NULL,Language=NULL){
   if(is.null(API)){
