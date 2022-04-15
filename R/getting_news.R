@@ -1,10 +1,3 @@
-library(httr)
-library(rvest)
-library(xml2)
-library(xml2)
-library(tibble)
-library(lubridate)
-
 
 url <- "https://newsapi.org/v2/"
 API = "f8acc8a2a90845d5b57ab446ba1d9827"
