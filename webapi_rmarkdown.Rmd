@@ -77,5 +77,25 @@ news_df <- function(x, verbose=FALSE) {
 ```{r}
 tr <- news_df(tr_news)
 tr
+
+news_to_df <- function(x) {
+  
+  date= as.Date(x$publishedAt)
+  # time= hms::as.hms(x$publishedAt)
+  
+  tibble(
+    source = x$source$name,
+    author = x$author,
+    title = x$title,
+    description = x$description,
+    url = x$url,
+    published_day = date,
+    #published_time = time,
+    pics = x$urlToImage
+  )
+}
+news_to_df <- tr_news$articles %>% purrr::map_df(news_to_df)
+
+news_to_df
 ```
 
