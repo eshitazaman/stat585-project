@@ -58,8 +58,14 @@ ui <- fluidPage(
   titlePanel("Top Headlines"),
   
   sidebarPanel(
-    selectInput("country", "Select Country", choices = countries, selected = "United States")
+    selectInput("country", "Select Country", choices = countries, selected = "United States"),
+    selectInput("category", "Select News Category", choices = category, selected = "sports"),
+    dateRangeInput('dateRange',
+                   label = 'Date range input: yyyy-mm-dd',
+                   start = Sys.Date() - 2, end = Sys.Date() + 2
+    ),
   ),
+  
   
   mainPanel(
     tabsetPanel(
