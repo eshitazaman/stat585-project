@@ -1,7 +1,6 @@
 library(httr)
 library(rvest)
 library(xml2)
-library(xml2)
 library(tibble)
 library(lubridate)
 
