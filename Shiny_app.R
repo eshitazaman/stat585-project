@@ -48,6 +48,10 @@ news_df <- function(x, verbose=FALSE) {
     description = description
   )
 }
+#news <- httr::content(req_data, as = "parsed")
+
+
+
 
 
 
@@ -69,7 +73,8 @@ ui <- fluidPage(
   
   mainPanel(
     tabsetPanel(
-      tabPanel("3 - Top Headlines", tableOutput("headlines"))
+      tabPanel("Top Headlines", tableOutput("headlines")),
+      tabPanel("Everything", tableOutput("all_headlines"))
     )
   )
 )
@@ -86,6 +91,7 @@ server <- function(input, output) {
     )
     news <- httr::content(req_data, as = "parsed")    
     headlines <- news_df(news)
+    #headlines <- news$articles %>% purrr::map_df(news_data)
   })
 }
 

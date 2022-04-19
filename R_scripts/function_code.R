@@ -51,3 +51,9 @@ news_project <- function(url,API,Country=NULL,Source=NULL,Category=NULL,Newstype
   return (news_df)
   
 }
+
+url <- "https://newsapi.org/v2/"
+req_data <- httr::GET(
+  paste0(url, "top-headlines?country=us", 
+         "&apiKey=f8acc8a2a90845d5b57ab446ba1d9827")
+)
