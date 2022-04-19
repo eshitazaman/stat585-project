@@ -10,7 +10,7 @@ API = #apikey
 
 news_project <- function(url,API,Country=NULL,Source=NULL,Category=NULL,Newstype=NULL,from_date=NULL,Language=NULL){
   if(is.null(API)){
-    stop("You must provide a APIkey to access news.")
+    stop("You must provide an APIkey to access news.")
   }
   
   if(!is.null(API) ){

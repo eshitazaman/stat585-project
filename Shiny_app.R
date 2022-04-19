@@ -38,8 +38,12 @@ news_df <- function(x, verbose=FALSE) {
   content <- character()
   imageURL <- character()
   
-  for(i in 1:3){
+  for(i in 1:length(x)){
     title=c(title, x$articles[[i]]$title)
+    if(is.null(x$articles[[i]]$description)){
+     description=c(description,NA)
+    }
+    
     description=c(description,x$articles[[i]]$description)
   }
   
@@ -49,7 +53,6 @@ news_df <- function(x, verbose=FALSE) {
   )
 }
 #news <- httr::content(req_data, as = "parsed")
-
 
 
 
@@ -66,7 +69,7 @@ ui <- fluidPage(
     selectInput("category", "Select News Category", choices = category, selected = "sports"),
     dateRangeInput('dateRange',
                    label = 'Date range input: yyyy-mm-dd',
-                   start = Sys.Date() - 2, end = Sys.Date() + 2
+                   start = Sys.Date() - 2, end = Sys.Date() 
     ),
   ),
   
