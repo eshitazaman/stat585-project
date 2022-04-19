@@ -37,8 +37,8 @@ news_df <- function(x, verbose=FALSE) {
   description <- character()
   content <- character()
   imageURL <- character()
-  
-  for(i in 1:length(x)){
+  l<-length(x$articles)
+  for(i in 1:l){
     title=c(title, x$articles[[i]]$title)
     if(is.null(x$articles[[i]]$description)){
      description=c(description,NA)
@@ -84,13 +84,18 @@ ui <- fluidPage(
 
 
 server <- function(input, output) {
+  output$dateRangeText  <- renderText({
+    paste("input$dateRange is", 
+          paste(as.character(input$dateRange), collapse = " &to= ")
+    )
+  })
 
   output$headlines <- renderTable({
     cntry <- abb_countries[which(countries == input$country)]
+    #category_i <- which(category == input$category)
     url <- "https://newsapi.org/v2/"
     req_data <- httr::GET(
-      paste0(url, "top-headlines?country=", cntry, 
-             "&apiKey=f8acc8a2a90845d5b57ab446ba1d9827")
+      paste0(url, "top-headlines?country=", cntry, "&category=",input$category,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=f8acc8a2a90845d5b57ab446ba1d9827")
     )
     news <- httr::content(req_data, as = "parsed")    
     headlines <- news_df(news)
