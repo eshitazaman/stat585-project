@@ -1,3 +1,8 @@
+library(shiny)
+library(tidyverse)
+library(tibble)
+
+
 sort_by <- c("relevancy", "popularity", "publishedAt")
 
 languages <- c("Arabic", "German", "English", "Spanish", "French",
@@ -53,13 +58,12 @@ everything_df <- function(x, verbose=FALSE) {
   }
   
   tibble (
-    author = author,
     title = title,
     description = description,
+    content = content,
     url = url,
-    imageURL = imageURL,
-    publishedAt = publishedAt,
-    content = content
+    author = author,
+    publishedAt = publishedAt
   )
 }
 #news <- httr::content(req_data, as = "parsed")
