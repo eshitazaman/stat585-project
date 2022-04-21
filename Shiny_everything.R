@@ -1,6 +1,7 @@
 library(shiny)
 library(tidyverse)
 library(tibble)
+library(DT)
 
 
 sort_by <- c("relevancy", "popularity", "publishedAt")
@@ -88,7 +89,7 @@ ui <- fluidPage(
   
   mainPanel(
     tabsetPanel(
-      tabPanel("Articles", tableOutput("articles"))
+      tabPanel("Articles", DT::dataTableOutput("articles"))
     )
   )
 )
@@ -102,7 +103,7 @@ server <- function(input, output) {
     )
   })
 
-  output$articles <- renderTable({
+  output$articles <- DT::renderDataTable({
     text <- input$text
     language <- abb_languages[which(languages == input$language)]
     sort_by <- input$sort_by
@@ -111,7 +112,8 @@ server <- function(input, output) {
       paste0(url, "everything?q=", text, "&language=",language,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=f8acc8a2a90845d5b57ab446ba1d9827")
     )
     news <- httr::content(req_data, as = "parsed")    
-    articles <- everything_df(news)
+    dd <- everything_df(news)
+    articles<-DT::datatable(dd,options=list(lengthMenu = c(5, 2),pageLength=5))
     #headlines <- news$articles %>% purrr::map_df(news_data)
   })
 }
