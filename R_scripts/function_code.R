@@ -44,7 +44,7 @@ news_project <- function(url,API,Country=NULL,Source=NULL,Category=NULL,Newstype
       #id = x$id,
       #shelterID = x$shelterId,
       url = x$url,
-      pics = list(x$urlToImage)
+      urlToImage = x$urlToImage
       
     )
   }
@@ -70,7 +70,6 @@ news_df <- function(x, verbose=FALSE) {
   title <- character()
   description <- character()
   content <- character()
-  imageURL <- character()
   l<-length(x$articles)
   print("this is length")
   print(l)
@@ -79,14 +78,17 @@ news_df <- function(x, verbose=FALSE) {
     if(is.null(x$articles[[i]]$description)){
       description=c(description,NA)
     }
-    
+    if(is.null(x$articles[[i]]$urlToImage)){
+      urlToImage=c(urlToImage,NA)
+    }
     description=c(description,x$articles[[i]]$description)
   }
   
   tibble (
     title = title,
     description = description,
-    url = url
+    url = url,
+    urlToImage = urlToImage
   )
 }
 

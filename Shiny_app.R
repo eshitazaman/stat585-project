@@ -47,12 +47,14 @@ news_df <- function(x, verbose=FALSE) {
     
     description=c(description,x$articles[[i]]$description)
     url=c(url,x$articles[[i]]$url)
+    urlToImage=c(urlToImage,x$articles[[i]]$urlToImage)
   }
   
   tibble (
     title = title,
     description = description,
-    url = url
+    url = url,
+    urlToImage = urlToImage
   )
 }
 #news <- httr::content(req_data, as = "parsed")
