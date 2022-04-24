@@ -3,6 +3,7 @@ library(rvest)
 library(xml2)
 library(tibble)
 library(lubridate)
+library(tidyverse)
 
 
 url <- "https://newsapi.org/v2/"
@@ -42,7 +43,9 @@ news_project <- function(url,API,Country=NULL,Source=NULL,Category=NULL,Newstype
       #sex = x$sex,
       #id = x$id,
       #shelterID = x$shelterId,
-      pics = x$urlToImage
+      url = x$url,
+      pics = list(x$urlToImage)
+      
     )
   }
   
@@ -82,7 +85,8 @@ news_df <- function(x, verbose=FALSE) {
   
   tibble (
     title = title,
-    description = description
+    description = description,
+    url = url
   )
 }
 

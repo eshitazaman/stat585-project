@@ -36,6 +36,7 @@ news_df <- function(x, verbose=FALSE) {
   title <- character()
   description <- character()
   content <- character()
+  url <- character()
   imageURL <- character()
   l<-length(x$articles)
   for(i in 1:l){
@@ -45,11 +46,13 @@ news_df <- function(x, verbose=FALSE) {
     }
     
     description=c(description,x$articles[[i]]$description)
+    url=c(url,x$articles[[i]]$url)
   }
   
   tibble (
     title = title,
-    description = description
+    description = description,
+    url = url
   )
 }
 #news <- httr::content(req_data, as = "parsed")
@@ -60,6 +63,7 @@ news_df <- function(x, verbose=FALSE) {
 
 ###################
 library(shiny)
+library(tidyverse)
 ui <- fluidPage(
   
   titlePanel("Top Headlines"),
@@ -71,6 +75,7 @@ ui <- fluidPage(
                    label = 'Date range input: yyyy-mm-dd',
                    start = Sys.Date() - 2, end = Sys.Date() 
     ),
+    actionButton(inputId = "go", label = "Search")
   ),
   
   
