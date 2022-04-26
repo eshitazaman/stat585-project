@@ -111,6 +111,36 @@ server <- function(input, output) {
 }
 
 shinyApp(ui, server)
+
+############ Alex's Attempt ############
+server <- function(input, output) {
+  output$dateRangeText  <- renderText({
+    paste("input$dateRange is", 
+          paste(as.character(input$dateRange), collapse = " &to= ")
+    )
+  })
+  
+  output$headlines <- observeEvent(input$go, {
+    
+    renderTable({
+    cntry <- abb_countries[which(countries == input$country)]
+    #category_i <- which(category == input$category)
+    url <- "https://newsapi.org/v2/"
+    req_data <- httr::GET(
+      paste0(url, "top-headlines?country=", cntry, "&category=",input$category,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=f8acc8a2a90845d5b57ab446ba1d9827")
+    )
+    news <- httr::content(req_data, as = "parsed")    
+    #headlines <- news_df(news)
+    headlines <- news$articles %>% purrr::map_df(news_to_df)
+  })
+  })
+}
+
+
+#############################
+
+
+shinyApp(ui, server)
 ########
 
 
