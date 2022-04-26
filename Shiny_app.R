@@ -98,8 +98,8 @@ server <- function(input, output) {
       paste0(url, "top-headlines?country=", cntry, "&category=",input$category,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=f8acc8a2a90845d5b57ab446ba1d9827")
     )
     news <- httr::content(req_data, as = "parsed")    
-    headlines <- news_df(news)
-    #headlines <- news$articles %>% purrr::map_df(news_data)
+    #headlines <- news_df(news)
+    headlines <- news$articles %>% purrr::map_df(news_to_df)
   })
 }
 

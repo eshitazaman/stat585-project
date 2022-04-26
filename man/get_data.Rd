@@ -4,10 +4,10 @@
 \alias{get_data}
 \title{Creates a thinned Shapefile}
 \usage{
-get_data()
+get_data(APIkey = NULL)
 }
 \arguments{
-\item{url}{and API key}
+\item{APIkey}{provided by the user to get the news headlines of USA}
 }
 \value{
 parsed news
