@@ -9,9 +9,13 @@ Authors@R:
     person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: This package contains 5 functions which each transform an inputted shapefile into a thinned dataframe. The outputs for these functions are more easily manageable than the original shapefiles.
+<<<<<<< HEAD
 License: MIT + file LICENSE
+=======
+License: MIT+file LICENSE 
+>>>>>>> ad9e6e5e977d0a16b17293b5732e31905d4f579a
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
-Imports: sf,dplyr,purrr,maptools,tidyverse,checkmate,ggplot2
+Imports: xml2,httr,rvest,dplyr,purrr,maptools,tidyverse,checkmate,ggplot2,assertthat
 Depends: 
