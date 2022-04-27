@@ -17,4 +17,4 @@ Imports: xml2,httr,rvest,dplyr,purrr,maptools,tidyverse,checkmate,ggplot2,assert
 Depends: 
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
-
+URL: https://eshitazaman.github.io/stat585-project/
