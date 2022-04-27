@@ -1,5 +1,9 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+<<<<<<< HEAD
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+=======
+^LICENSE\.md$
+>>>>>>> 15fe0580f4eac96b575b878b924e3a10895e05a0
