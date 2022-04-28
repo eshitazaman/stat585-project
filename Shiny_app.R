@@ -103,6 +103,8 @@ ui <- fluidPage(
 
 
 server <- function(input, output) {
+  numClicks <- 0
+  
   output$dateRangeText  <- renderText({
     paste("input$dateRange is",
           paste(as.character(input$dateRange), collapse = " &to= ")
@@ -110,7 +112,8 @@ server <- function(input, output) {
   })
   
   headlines <- reactive({
-    if (input$go) {
+    if (input$go > numClicks) {
+      numClicks <<- numClicks + 1
       print("Start new search")
       
       cntry <- abb_countries[which(countries == input$country)]
