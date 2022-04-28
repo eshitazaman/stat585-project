@@ -41,12 +41,20 @@ news_df <- function(x, verbose=FALSE) {
   l<-length(x$articles)
   for(i in 1:l){
     title=c(title, x$articles[[i]]$title)
+    
     if(is.null(x$articles[[i]]$description)){
      description=c(description,NA)
     }
-    
     description=c(description,x$articles[[i]]$description)
+    
+    if(is.null(x$articles[[i]]$url)){
+      url=c(url,NA)
+    }
     url=c(url,x$articles[[i]]$url)
+    
+    if(is.null(x$articles[[i]]$urlToImage)){
+      urlToImage=c(urlToImage,NA)
+    }
     urlToImage=c(urlToImage,x$articles[[i]]$urlToImage)
   }
   
