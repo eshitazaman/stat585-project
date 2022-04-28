@@ -16,7 +16,7 @@ dat <- data.frame(
   country = newsx,
   flag = image
   )
-)
+
 
 server <- shinyServer(function(input, output){
   output$mytable <- DT::renderDataTable({
