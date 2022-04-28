@@ -37,7 +37,7 @@ news_df <- function(x, verbose=FALSE) {
   description <- character()
   content <- character()
   url <- character()
-  imageURL <- character()
+  urlToImage <- character()
   l<-length(x$articles)
   for(i in 1:l){
     title=c(title, x$articles[[i]]$title)
@@ -46,7 +46,13 @@ news_df <- function(x, verbose=FALSE) {
     }
     
     description=c(description,x$articles[[i]]$description)
+    if(is.null(x$articles[[i]]$url)){
+      url=c(url,NA)
+    }
     url=c(url,x$articles[[i]]$url)
+    if(is.null(x$articles[[i]]$urlToImage)){
+      urlToImage=c(urlToImage,NA)
+    }
     urlToImage=c(urlToImage,x$articles[[i]]$urlToImage)
   }
   
@@ -106,36 +112,13 @@ server <- function(input, output) {
     )
     news <- httr::content(req_data, as = "parsed")    
     #headlines <- news_df(news)
-    headlines <- news$articles %>% purrr::map_df(news_to_df)
+    headlines <- news$articles %>% purrr::map_df(news_df)
   })
 }
 
-shinyApp(ui, server)
+#shinyApp(ui, server)
 
 ############ Alex's Attempt ############
-server <- function(input, output) {
-  output$dateRangeText  <- renderText({
-    paste("input$dateRange is", 
-          paste(as.character(input$dateRange), collapse = " &to= ")
-    )
-  })
-  
-  output$headlines <- observeEvent(input$go, {
-    
-    renderTable({
-    cntry <- abb_countries[which(countries == input$country)]
-    #category_i <- which(category == input$category)
-    url <- "https://newsapi.org/v2/"
-    req_data <- httr::GET(
-      paste0(url, "top-headlines?country=", cntry, "&category=",input$category,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=f8acc8a2a90845d5b57ab446ba1d9827")
-    )
-    news <- httr::content(req_data, as = "parsed")    
-    #headlines <- news_df(news)
-    headlines <- news$articles %>% purrr::map_df(news_to_df)
-  })
-  })
-}
-
 
 #############################
 
