@@ -1,7 +1,7 @@
-category <- c("all", "business", "entertainment", "general", "health",
+category <- c("business", "entertainment", "general", "health",
               "science", "sports", "technology")
 
-language <- c("All", "Arabic", "German", "English", "Spanish", "French",
+language <- c("Arabic", "German", "English", "Spanish", "French",
               "Hebrew", "Italian", "Norwegian", "Portuguese", "Russian",
               "Serbian", "Urdu", "Zulu")
 countries <- c("United Arab Emirates", "Argentina", "Austria","Australia",
