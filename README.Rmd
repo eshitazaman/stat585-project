@@ -1,0 +1,25 @@
+---
+title: "woRldnews"
+output: github_document
+---
+
+#woRldnews
+
+"woRldnews" is a R package that allows users to search for top and breaking news in 50 countries in real time. A shiny.app allows users to search in seven distinct categories and thirteen different languages. 
+
+
+##Installation
+
+woRldnews can be installed with devtools to get the most recent production version:
+
+```{r}
+install.packages('devtools') # if devtools is not already installed
+devtools::install_github('.....')
+```
+
+##Examples and Usage
+
+To acquire an API, users must first create a free "Newsapi.org" account. The Newsapi API will be accessed through the API. To get started, below are some brief examples of how to use woRldnews.
+Please read the More Samples and Tutorials section below for more in-depth tutorials for woRldnews as well as some examples of what can be done with the library. 
+
+
