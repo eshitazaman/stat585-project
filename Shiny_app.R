@@ -37,7 +37,7 @@ news_df <- function(x, verbose=FALSE) {
   description <- character()
   content <- character()
   url <- character()
-  imageURL <- character()
+  urlToImage <- character()
   l<-length(x$articles)
   for(i in 1:l){
     title=c(title, x$articles[[i]]$title)
@@ -71,7 +71,7 @@ news_to_df <- function(x) {
   tibble(
     name = x$title,
     description = x$description,
-    date = as.Date(x$publishedAt), # date is in days since Jan 1 1970
+    date = x$publishedAt, # date is in days since Jan 1 1970
     #sex = x$sex,
     #id = x$id,
     #shelterID = x$shelterId,
@@ -86,6 +86,7 @@ news_to_df <- function(x) {
 ###################
 library(shiny)
 library(tidyverse)
+library(lubridate)
 ui <- fluidPage(
   
   titlePanel("Top Headlines"),
@@ -103,8 +104,8 @@ ui <- fluidPage(
   
   mainPanel(
     tabsetPanel(
-      tabPanel("Top Headlines", tableOutput("headlines")),
-      tabPanel("Everything", tableOutput("all_headlines"))
+      tabPanel("Top Headlines", DT::dataTableOutput("headlines")),
+      tabPanel("Everything", DT::dataTableOutput("all_headlines"))
     )
   )
 )
@@ -133,12 +134,33 @@ server <- function(input, output) {
       news <- httr::content(req_data, as = "parsed")    
       #headlines <- news_df(news)
       headlines <- news$articles %>% purrr::map_df(news_to_df)
+      x1 <- headlines[,1]
+      x2 <- headlines[,2]
+      x3 <- headlines[,3]
+      x4 <- headlines[,4]
+      x5 <- headlines[,5]
+      
+      image <- c()
+      for (i in 1:dim(headlines)[1]){
+       image <-c(image,paste0('<img src=',headlines[i,5],' height=200','></img>'))
+      }
+      
+      urls <- c()
+      for (i in 1:dim(headlines)[1]){
+        urls <-c(urls,paste0("<a href='",headlines[i,4],"' target='_balank'>",headlines[i,4], "</a>"))}
+        dat <- NULL
+        dat <- data.frame(x1,x2,x3,urls, image)
+        
+      
+      
+    headlines<-dat
+      
       return(headlines)
     }
   })
   
-  output$headlines <- renderTable({
-    headlines()
+  output$headlines <- DT::renderDataTable({
+    DT::datatable(headlines(), escape = FALSE)
   })
 }
 
