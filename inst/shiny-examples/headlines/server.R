@@ -11,7 +11,7 @@ server <- function(input, output) {
     if (input$go > numClicks) {
       numClicks <<- numClicks + 1
       print("Start new search")
-
+      
       cntry <-  c("ae","ar","at","au",
                   "be","bg","br", "ca","ch",
                   "cn","co","cu","cz","de",
@@ -83,4 +83,5 @@ server <- function(input, output) {
     DT::datatable(headlines(), escape = FALSE)
   })
 }
+
 
