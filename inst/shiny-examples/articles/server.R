@@ -7,6 +7,7 @@ server <- function(input, output) {
   })
   
   output$articles <- DT::renderDataTable({
+    apikey <- input$apikey
     text <- input$text
     language <- c("ar","de", "en","es","fr", "he", "it","nl","no","pt", "ru", "se", "ud", "zh")[which(c("Arabic", "German", "English", "Spanish", "French",
                                       "Hebrew", "Italian", "Dutch", "Norwegian", "Portuguese", "Russian",
@@ -14,7 +15,7 @@ server <- function(input, output) {
     sort_by <- input$sort_by
     url <- "https://newsapi.org/v2/"
     req_data <- httr::GET(
-      paste0(url, "everything?q=", text, "&language=",language,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=f8acc8a2a90845d5b57ab446ba1d9827")
+      paste0(url, "everything?q=", text, "&language=",language,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=", apikey)
     )
     news <- httr::content(req_data, as = "parsed")    
     
@@ -89,4 +90,5 @@ server <- function(input, output) {
     
   })
 }
+
 

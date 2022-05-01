@@ -34,7 +34,7 @@ server <- function(input, output) {
                                                "Venezuela", "South Africa")== input$country)]
       url <- "https://newsapi.org/v2/"
       req_data <- httr::GET(
-        paste0(url, "top-headlines?country=", cntry, "&category=",input$category,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=f8acc8a2a90845d5b57ab446ba1d9827")
+        paste0(url, "top-headlines?country=", cntry, "&category=",input$category,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=", input$apikey)
       )
       news <- httr::content(req_data, as = "parsed")    
       #headlines <- news_df(news)
