@@ -2,7 +2,7 @@
 % Please edit documentation in R/clean_news.R
 \name{news_clean}
 \alias{news_clean}
-\title{Generates a tibble of news with title, description, published date and image link}
+\title{Generates a tibble of news with title, description, published date, news url and image url}
 \usage{
 news_clean(APIkey = NULL)
 }
@@ -13,5 +13,5 @@ news_clean(APIkey = NULL)
 a tibble of news
 }
 \description{
-Generates a tibble of news with title, description, published date and image link
+Generates a tibble of news with title, description, published date, news url and image url
 }

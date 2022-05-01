@@ -1,14 +1,14 @@
-Package: stat585
-Title: What the Package Does (One Line, Title Case)
+Package: woRldnews
+Title: Finds The Top News Headlines of the World
 Version: 0.0.0.9000
 Authors@R: 
     person("Eshita", "Zaman", , "ezaman@iastate.edu", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Coskun", "Erden", , "first.last@example.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Alex", "Cleveringa", , "first.last@example.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: This package contains 5 functions which each transform an inputted shapefile into a thinned dataframe. The outputs for these functions are more easily manageable than the original shapefiles.
+Description: This package contains few functions which can generate the dataframe of top news headlines. Based on the API key and parameters like country, news category, and language it fetch the data from newsAPI server. This raw data will be parsed and cleaned to generate a dataframe of news.
 License: MIT+file LICENSE 
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

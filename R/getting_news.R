@@ -14,7 +14,7 @@ utils::browseURL("https://newsapi.org/register")
 
 
 
-#' Creates a thinned Shapefile
+#' Creates a parsed news content from the raw news data
 #'
 #' @param APIkey provided by the user to get the news headlines of USA
 #'
