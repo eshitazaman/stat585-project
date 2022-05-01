@@ -17,6 +17,8 @@ server <- function(input, output) {
       paste0(url, "everything?q=", text, "&language=",language,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=f8acc8a2a90845d5b57ab446ba1d9827")
     )
     news <- httr::content(req_data, as = "parsed")    
+    
+    
     everything_df <- function(x, verbose=FALSE) {
       if (verbose) {
         cat(x$name)
@@ -30,23 +32,29 @@ server <- function(input, output) {
       publishedAt <- character()
       content <- character()
       l<-length(x$articles)
+      
       for(i in 1:l){
         if(is.null(x$articles[[i]]$author)){
           author=c(author,NA)
         }
         author =c(author, x$articles[[i]]$author)
+        
         if(is.null(x$articles[[i]]$title)){
           title=c(title,NA)
         }
         title=c(title, x$articles[[i]]$title)
+        
         if(is.null(x$articles[[i]]$description)){
           description=c(description,NA)
         }
         description=c(description,x$articles[[i]]$description)
+        
         if(is.null(x$articles[[i]]$url)){
           url=c(url,NA)
         }
         url=c(url,x$articles[[i]]$url)
+        
+        
         if(is.null(x$articles[[i]]$imageURL)){
           imageURL=c(imageURL,NA)
         }
@@ -56,6 +64,7 @@ server <- function(input, output) {
           publishedAt=c(publishedAt,NA)
         }
         publishedAt=c(publishedAt,x$articles[[i]]$publishedAt)
+        
         if(is.null(x$articles[[i]]$content)){
           content=c(content,NA)
         }
@@ -70,10 +79,14 @@ server <- function(input, output) {
         author = author,
         publishedAt = publishedAt
       )
+      
+      
     }
     
-    dd <- everything_df(news)
-    articles<-DT::datatable(dd,options=list(lengthMenu = c(5, 2),pageLength=5))
-    #headlines <- news$articles %>% purrr::map_df(news_data)
+    articles <-  everything_df(news)
+
+    articles<-DT::datatable(articles,options=list(lengthMenu = c(5, 2),pageLength=5))
+    
   })
 }
+
