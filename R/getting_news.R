@@ -8,7 +8,7 @@
 get_API <- function(){
   
 request <- ""
-message("Please reister to get an API key to get news from this site")
+message("Please reister to get an API key to get news from this site. After registering save the api key!")
 utils::browseURL("https://newsapi.org/register")  
 }
 
