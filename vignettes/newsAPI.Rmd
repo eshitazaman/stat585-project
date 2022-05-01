@@ -1,10 +1,10 @@
 ---
-title: "News Headlines in R"
+title: "woRldnews::News Headlines using R"
 author: "Eshita Zaman, Coskun Erden, Alex Cleveringa "
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{News Headlines in R}
+  %\VignetteIndexEntry{woRldnews::News Headlines in R}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -15,7 +15,13 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
-Our plan was to build a project that will help graduate students to find jobs. Specifically jobs in academia. They can look for different kinds of jobs, for postdoctoral positions, assistant professor, research positions. We planned to add various search criteria to customize the job serach. Initially, we thought about searching by zip code/area/state, job description, job starting time, salary etc. We decided to use the data from HigherEdJobs.com. When we started working on the implementation, we noticed that HiggherEdJobs.com does not have an API to access their data. We decided to changed our data source but strict to the initial project idea.  We decided to use data from indeed.com. Fortunately, indeed.com have a public API for developers. One can register as a developer,  get the API key and secret code to get the access token. These tokens are active for an hour. After the time is elapsed, another token needs to be generated. But then we faced a roadblock. Apparently, we cannot access indeed.com's user data anymore. The API, secret and access token can be used to post job in theirs website. But we cannot fetch data from theirs server. We the tried to change the data source again. We tried for couple other job posting websites such as glassdoor, github jobs, stockoverflow jobs. Our attempts were not successful. Some of them discontinued their APIs and some asked to signed a contract not to share data. We appreciate the cautions big companies are  taking to protect user data. Because user put sensitive information in the jo application. It can be dangerous if that information goes to wrong people. We had to change the project idea because of not getting the data we were looking for. 
+Our plan was to build a project that will help graduate students to find jobs. Specifically jobs in academia. They can look for different kinds of jobs, for postdoctoral positions, assistant professor, research positions. We planned to add various search criteria to customize the job serach. Initially, we thought about searching by zip code/area/state, job description, job starting time, salary etc. We decided to use the data from HigherEdJobs.com. When we started working on the implementation, we noticed that HiggherEdJobs.com does not have an API to access their data. We decided to changed our data source but strict to the initial project idea.  We decided to use data from indeed.com. Fortunately, indeed.com have a public API for developers. One can register as a developer,  get the API key and secret code to get the access token. These tokens are active for an hour. After the time is elapsed, another token needs to be generated. But then we faced a roadblock. Apparently, we cannot access indeed.com's user data anymore. The API, secret and access token can be used to post job in theirs website. But we cannot fetch data from theirs server. We the tried to change the data source again. We tried for couple other job posting websites such as glassdoor, github jobs, stockoverflow jobs. Our attempts were not successful. Some of them discontinued their APIs and some asked to signed a contract not to share data. We appreciate the cautions big companies are  taking to protect user data. Because user put sensitive information in the job application. It can be dangerous if that information goes to wrong people. We had to change the project idea because of not getting the data we were looking for. Finally, the main takeaway points for us while selecting a project were:
+
++ Make sure the API exists
++ Make sure it's a public API
++ API is currently operating
++ Data is not extremely sensitive
++ API allows to fetch data from server
 
 Our current project is to get top news headlines everyday. A person can search for today's top news headlines based on country, language, category such as health, sports, entertainments etc. Top headlines can be serached based on news sources like BBC, CNN, Aljazeera etc. One thing to remember while searching news headlines is county and source cannot be put together in the same search. 
 
@@ -27,18 +33,11 @@ In this package, you will get to know
 + Example
 + Shiny app
 
-
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
-
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
+## Getting started with the package
 
 Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
 
-## Styles
+## Registering for the API key
 
 The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
 
@@ -46,9 +45,9 @@ The `html_vignette` template includes a basic CSS theme. To override this theme 
       rmarkdown::html_vignette:
         css: mystyles.css
 
-## Figures
+## Functions
 
-The figure sizes have been customised so that you can easily put two images side-by-side. 
+The figure sizes have been customized so that you can easily put two images side-by-side. 
 
 ```{r, fig.show='hold'}
 plot(1:10)
@@ -63,15 +62,15 @@ You can enable figure captions by `fig_caption: yes` in YAML:
 
 Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
 
-## More Examples
+## Shiny app
 
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+In this section, we want to introduce the interactive user interface that user can use to run the application. When you run the shiny app it will create a window in the user's preferred browser and ask the user to select the parameters for the news search. Based on the parameters, the application will search the news headlines and display them in a tabular format. In that data table, user can see the news title, news description, published date, news url and image associated with the news.  If you click on the news link, it will directly take the user to the original website where the news was published.  
 
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+
+```{r, echo=FALSE}
+#library(woRldnews)
+#library(shiny)
+#runApp('Shiny_app.R')
 ```
 
-Also a quote using `>`:
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))

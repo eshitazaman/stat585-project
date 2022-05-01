@@ -2,7 +2,7 @@
 % Please edit documentation in R/getting_news.R
 \name{get_data}
 \alias{get_data}
-\title{Creates a thinned Shapefile}
+\title{Creates a parsed news content from the raw news data}
 \usage{
 get_data(APIkey = NULL)
 }
@@ -13,5 +13,5 @@ get_data(APIkey = NULL)
 parsed news
 }
 \description{
-Creates a thinned Shapefile
+Creates a parsed news content from the raw news data
 }

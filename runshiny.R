@@ -1,6 +1,6 @@
 runshiny <- function(choice) {
   # locate all the shiny app examples that exist
-  validChoices <- list.files(system.file("shiny-examples", package = "stat585"))
+  validChoices <- list.files(system.file("shiny-examples", package = "woRldnews"))
   
   validChoicesMsg <-
     paste0(
@@ -18,7 +18,7 @@ runshiny <- function(choice) {
   }
   
   # find and launch the app
-  appDir <- system.file("shiny-examples", choice, package = "stat585")
+  appDir <- system.file("shiny-examples", choice, package = "woRldnews")
   shiny::runApp(appDir, display.mode = "normal")
 }
 

@@ -1,4 +1,4 @@
-#' Generates a tibble of news with title, description, published date and image link
+#' Generates a tibble of news with title, description, published date, news url and image url
 #'
 #' @param APIkey is the APIkey to access news
 #'

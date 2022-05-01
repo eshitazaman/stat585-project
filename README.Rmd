@@ -2,21 +2,25 @@
 output: github_document
 ---
 
-#woRldnews
+
 
 "woRldnews" is a R package that allows users to search for top news in 50 countries and millions of articles from over 80,000 large and small news sources and blogs in real time. Users can do relevant searches using two distinct "shiny" apps. Users may search top headlines in fifty countries with the first "shiny" app. Users can use the second app to search for articles that they are interested in fifteen languages. 
 
- 
-##Installation
+<<<<<<< HEAD
+
+## Installation
+>>>>>>> d2dbc5f82ed87e5e9903e5923cc32ebc5c850768
 
 woRldnews can be installed with devtools to get the most recent production version from GitHub:
 
 ```{r}
+<<<<<<< HEAD
 install.packages('devtools') # if devtools is not already installed
 devtools::install_github('eshitazaman/stat585-project')
+>>>>>>> d2dbc5f82ed87e5e9903e5923cc32ebc5c850768
 ```
 
-##Examples and Usage
+## Examples and Usage
 
 
 Welcome to woRldnews! Before you can search for news and articles in R, you'll need to create a free account at [Newsapi.org] (https://newsapi.org) and acquire an apikey.
@@ -57,14 +61,19 @@ runshiny("articles")
 
 When you run this function, you'll receive the shiny widget below: 
 
+<<<<<<< HEAD
 ![Search box](articles.png)
 
 From the select boxes on the shiny.app, you enter the keyword, select the language and sort by for the articles search. You can narrow the search to specific dates within the previous 30 days.  
+``
+>>>>>>> d2dbc5f82ed87e5e9903e5923cc32ebc5c850768
 
 You receive the search results in a table format with 20 top headlines including title, description, content, url, author and publication date. 
 
+<<<<<<< HEAD
 ![Search results](articles_results.png)
 
+>>>>>>> d2dbc5f82ed87e5e9903e5923cc32ebc5c850768
 
 
 ## Vignettes
