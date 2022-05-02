@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Eshita", "Zaman", , "ezaman@iastate.edu", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-    person("Coskun", "Erden", , "first.last@example.com", role = c("aut", "cre"),
+    person("Coskun", "Erden", , "cerden@iastate.edu", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
     person("Alex", "Cleveringa", , "first.last@example.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))

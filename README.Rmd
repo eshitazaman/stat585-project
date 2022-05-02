@@ -28,7 +28,7 @@ Newsapi will assign you an apikey. You can save this apikey to your .Rprofile fo
 
 ```{r}
 newsapi_apikey <- "paste_key_here"
-newsapi_save_apikey(apikey = news_apikey)
+newsapi_save_apikey(apikey = newsapi_apikey)
 ```
 
 ## Using woRldnews
