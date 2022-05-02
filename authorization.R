@@ -14,3 +14,35 @@ newsapi_authorization <- function() {
 }
 
 
+#### Function for saving apikey to Rprofile
+
+newapi_save_apikey <- function(apikey = NULL) {
+  assertthat::assert_that(file.exists(".Rprofile"))
+  rprof_contents <- readLines(".Rprofile")
+  assertthat::assert_that(!is.null(apikey))
+  file_changed <- F
+  
+  if (!is.null(apikey)) {
+    assertthat::assert_that(is.character(apikey))
+    apikey_exists <- any(grepl("newsapi_apikey", rprof_contents))
+    if (!apikey_exists) {
+      str <- sprintf('\nnewsapi_apikey = \"%s\"\n', apikey)
+      cat(str, file = ".Rprofile", append = TRUE)
+      file_changed <- T
+    } else {
+      warning(".Rprofile already contains an apikey; no file change was made.\n")
+    }
+  }
+  
+  if (file_changed) {
+    source(".Rprofile")
+  }
+  #     if (!requireNamespace("rstudioapi", quietly = T) || 
+  #         !requireNamespace("fs", quietly = T)) {
+  # 
+  #       message("Your credentials will be avaiable in your Global Environment after restarting RStudio.")
+  #     } else {
+  #       restart_rstudio("Your credentials will be avaiable in your Global Environment after restarting RStudio.")
+  #     }
+  #   }
+}
