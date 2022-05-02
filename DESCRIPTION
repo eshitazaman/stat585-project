@@ -6,7 +6,7 @@ Authors@R:
            comment = c(ORCID = "YOUR-ORCID-ID"))
     person("Coskun", "Erden", , "cerden@iastate.edu", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-    person("Alex", "Cleveringa", , "first.last@example.com", role = c("aut", "cre"),
+    person("Alex", "Cleveringa", , "alexc1@jiastate.edu", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: This package contains few functions which can generate the dataframe of top news headlines. Based on the API key and parameters like country, news category, and language it fetch the data from newsAPI server. This raw data will be parsed and cleaned to generate a dataframe of news.
 License: MIT+file LICENSE 
