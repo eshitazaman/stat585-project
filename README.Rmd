@@ -16,17 +16,19 @@ devtools::install_github('eshitazaman/stat585-project')
 ## Examples and Usage
 
 
-Welcome to woRldnews! Before you can search for news and articles in R, you'll need to create a free account at [Newsapi.org] (https://newsapi.org) and acquire an apikey.
+Welcome to woRldnews! Before you can search for news and articles in R, you'll need to create a free account at [Newsapi.org] (https://newsapi.org) and acquire an apikey by using news_api function.
 
 
 ```{r}
 library(woRldnews)
+newsapi_setup()
 ```
 
-Newsapi will assign you an apikey. This apikey can be saved to you .Rprofile for future use. 
+Newsapi will assign you an apikey. You can save this apikey to your .Rprofile for future use by "newsapi_save_apikey" function. 
 
 ```{r}
-newsapi_key <- "paste_key_here"
+newsapi_apikey <- "paste_key_here"
+newsapi_save_apikey(apikey = news_apikey)
 ```
 
 ## Using woRldnews
@@ -42,7 +44,7 @@ When you run this function, you'll receive the shiny widget below:
 
 ![Search box](headlines.png)
 
-From the select boxes on the shiny.app, you select the country and category for the news search. You receive the search results in a table format with 20 top headlines including title, description, date, url, and url to image. By clicking the url you can access related websites. 
+First you enter the apikey provided by newsapi.org. Then, from the select boxes on the shiny.app, you select the country and category for the news search. You receive the search results in a table format with 20 top headlines including title, description, date, url, and url to image. By clicking the url you can access related websites. 
 
 ![Search results](results.png)
 
@@ -56,7 +58,7 @@ When you run this function, you'll receive the shiny widget below:
 
 ![Search box](articles.png)
 
-From the select boxes on the shiny.app, you enter the keyword, select the language and sort by for the articles search. You can narrow the search to specific dates within the previous 30 days.  
+First you enter the apikey provided by newsapi.org. Then,from the select boxes on the shiny.app, you enter the keyword, select the language and sort by for the articles search. You can narrow the search to specific dates within the previous 30 days.  
 ``
 
 You receive the search results in a table format with 20 top headlines including title, description, content, url, author and publication date. 

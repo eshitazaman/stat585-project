@@ -1,4 +1,4 @@
-newsapi_authorization <- function() {
+newsapi_setup <- function() {
   request <- "Welcome to woRldnews! Before you can search for news or articles \n in R , you'll need to get an apikey from Newsapi  at \n https://www.newsapi.org. Would you like to do this now? (Selecting \n 'Yes' will open browser.)"
   
   if (!interactive()) {
@@ -16,7 +16,7 @@ newsapi_authorization <- function() {
 
 #### Function for saving apikey to Rprofile
 
-newapi_save_apikey <- function(apikey = NULL) {
+newsapi_save_apikey <- function(apikey = NULL) {
   assertthat::assert_that(file.exists(".Rprofile"))
   rprof_contents <- readLines(".Rprofile")
   assertthat::assert_that(!is.null(apikey))
