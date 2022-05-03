@@ -91,29 +91,14 @@
 <div class="section level2">
 <h2 id="getting-started-with-the-package">Getting started with the package<a class="anchor" aria-label="anchor" href="#getting-started-with-the-package"></a>
 </h2>
-<p>Note the various macros within the <code>vignette</code> section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the <code>title</code> field and the <code>\VignetteIndexEntry</code> to match the title of your vignette.</p>
 </div>
 <div class="section level2">
 <h2 id="registering-for-the-api-key">Registering for the API key<a class="anchor" aria-label="anchor" href="#registering-for-the-api-key"></a>
 </h2>
-<p>The <code>html_vignette</code> template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:</p>
-<pre><code><span class="va">output</span><span class="op">:</span> 
-  <span class="fu">rmarkdown</span><span class="fu">::</span><span class="va"><a href="https://pkgs.rstudio.com/rmarkdown/reference/html_vignette.html" class="external-link">html_vignette</a></span><span class="op">:</span>
-    <span class="va">css</span><span class="op">:</span> <span class="va">mystyles.css</span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
 </h2>
-<p>The figure sizes have been customized so that you can easily put two images side-by-side.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
-<p><img src="newsAPI_files/figure-html/unnamed-chunk-1-1.png" width="700"><img src="newsAPI_files/figure-html/unnamed-chunk-1-2.png" width="700"></p>
-<p>You can enable figure captions by <code>fig_caption: yes</code> in YAML:</p>
-<pre><code><span class="va">output</span><span class="op">:</span>
-  <span class="fu">rmarkdown</span><span class="fu">::</span><span class="va"><a href="https://pkgs.rstudio.com/rmarkdown/reference/html_vignette.html" class="external-link">html_vignette</a></span><span class="op">:</span>
-    <span class="va">fig_caption</span><span class="op">:</span> <span class="va">yes</span></code></pre>
-<p>Then you can use the chunk option <code>fig.cap = "Your figure caption."</code> in <strong>knitr</strong>.</p>
 </div>
 <div class="section level2">
 <h2 id="shiny-app">Shiny app<a class="anchor" aria-label="anchor" href="#shiny-app"></a>
