@@ -1,6 +1,6 @@
 
-<!-- badges: start --> [![Codecov test
-coverage](https://codecov.io/gh/eshitazaman/stat585-project/branch/main/graph/badge.svg)](https://app.codecov.io/gh/eshitazaman/stat585-project?branch=main)
+<!-- badges: start -->
+[![codecov](https://codecov.io/gh/eshitazaman/stat585-project/branch/main/graph/badge.svg?token=DLtd2FbN76)](https://codecov.io/gh/eshitazaman/stat585-project)
 <!-- badges: end -->
 
 “woRldnews” is a R package that allows users to search for top news in
