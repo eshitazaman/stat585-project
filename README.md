@@ -84,7 +84,7 @@ including title, description, content, url, author and publication date.
 
 ## Vignettes
 
-For more details, see the [vignette](./docs/articles/index.html).
+For more details, see the [vignette](./articles/index.html).
 
 ## About Newsapi.org
 

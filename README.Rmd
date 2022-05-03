@@ -73,7 +73,7 @@ You receive the search results in a table format with 20 top headlines including
 
 ## Vignettes
 
-For more details, see the [vignette](./docs/articles/index.html).
+For more details, see the [vignette](./articles/index.html).
 
 ## About Newsapi.org
 
