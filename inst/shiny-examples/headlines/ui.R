@@ -4,8 +4,6 @@ shinyUI<- fluidPage(
   
   
   sidebarPanel(
-    
-    textInput("apikey", label=h3("Enter apikey", value = "Enter apikey ...")),
     selectInput("country", "Select Country", choices = c("United Arab Emirates", "Argentina", "Austria","Australia",
                                                          "Belgium", "Bulgaria", "Brazil", "Canada", "Switzerland",
                                                          "China", "Colombia", "Cuba",

@@ -40,9 +40,9 @@ newsapi_save_apikey <- function(apikey = NULL) {
   #     if (!requireNamespace("rstudioapi", quietly = T) || 
   #         !requireNamespace("fs", quietly = T)) {
   # 
-  #       message("Your credentials will be avaiable in your Global Environment after restarting RStudio.")
+  #       message("Your credentials will be available in your Global Environment after restarting RStudio.")
   #     } else {
-  #       restart_rstudio("Your credentials will be avaiable in your Global Environment after restarting RStudio.")
+  #       restart_rstudio("Your credentials will be available in your Global Environment after restarting RStudio.")
   #     }
   #   }
 }
