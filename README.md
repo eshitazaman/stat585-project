@@ -51,7 +51,7 @@ for news, you use runshiny function:
 
 When you run this function, you’ll receive the shiny widget below:
 
-![Search box](headlines.png)
+![Search box](./man/figures/headlines.png)
 
 First you enter the apikey provided by newsapi.org. Then, from the
 select boxes on the shiny.app, you select the country and category for
@@ -59,7 +59,7 @@ the news search. You receive the search results in a table format with
 20 top headlines including title, description, date, url, and url to
 image. By clicking the url you can access related websites.
 
-![Search results](./headlines.png)
+![Search results](./man/figures/articles.png)
 
 To search for articles, you use runshiny function:
 
@@ -69,7 +69,7 @@ To search for articles, you use runshiny function:
 
 When you run this function, you’ll receive the shiny widget below:
 
-![Search box](./articles.png)
+![Search box](./man/figures/results.png)
 
 First you enter the apikey provided by newsapi.org. Then,from the select
 boxes on the shiny.app, you enter the keyword, select the language and
@@ -80,11 +80,11 @@ dates within the previous 30 days.
 You receive the search results in a table format with 20 top headlines
 including title, description, content, url, author and publication date.
 
-![Search results](./articles_results.png)
+![Search results](./man/figures/articles_results.png)
 
 ## Vignettes
 
-For more details, see the vignette.
+For more details, see the [vignette](./docs/articles/index.html).
 
 ## About Newsapi.org
 
