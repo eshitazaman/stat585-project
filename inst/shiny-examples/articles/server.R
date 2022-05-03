@@ -15,7 +15,7 @@ server <- function(input, output) {
     sort_by <- input$sort_by
     url <- "https://newsapi.org/v2/"
     req_data <- httr::GET(
-      paste0(url, "everything?q=", text, "&language=",language,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=", apikey)
+      paste0(url, "everything?q=", text, "&language=",language,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=", Sys.getenv("newsapi_apikey"))
     )
     news <- httr::content(req_data, as = "parsed")    
     
