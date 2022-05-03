@@ -1,4 +1,4 @@
 library(testthat)
-library(stat585)
+library(woRldnews)
 
-test_check("stat585")
+test_check("woRldnews")

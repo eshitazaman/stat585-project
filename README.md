@@ -1,57 +1,90 @@
-woRldnews
-================
 
-# woRldnews
+<!-- badges: start --> [![Codecov test
+coverage](https://codecov.io/gh/eshitazaman/stat585-project/branch/main/graph/badge.svg)](https://app.codecov.io/gh/eshitazaman/stat585-project?branch=main)
+<!-- badges: end -->
 
-“woRldnews” is a R package that allows users to search for top and
-breaking news in 50 countries in real time. A shiny.app allows users to
-search in seven distinct categories and thirteen different languages.
+“woRldnews” is a R package that allows users to search for top news in
+50 countries and millions of articles from over 80,000 large and small
+news sources and blogs in real time. Users can do relevant searches
+using two distinct “shiny” apps. Users may search top headlines in fifty
+countries with the first “shiny” app. Users can use the second app to
+search for articles that they are interested in fifteen languages.
 
 ## Installation
 
 woRldnews can be installed with devtools to get the most recent
-production version:
+production version from GitHub:
 
 ``` r
 #install.packages('devtools') # if devtools is not already installed
-#devtools::install_github('.....')
+#devtools::install_github('eshitazaman/stat585-project')
 ```
 
 ## Examples and Usage
 
-To acquire an API, users must first create a free “Newsapi.org” account.
-The Newsapi API will be accessed through the API. To get started, below
-are some brief examples of how to use woRldnews. Please read the More
-Samples and Tutorials section below for more in-depth tutorials for
-woRldnews as well as some examples of what can be done with the library.
+Welcome to woRldnews! Before you can search for news and articles in R,
+you’ll need to create a free account at \[Newsapi.org\]
+(<https://newsapi.org>) and acquire an apikey by using news_api
+function.
 
-## Authenticating with the Newsapi API
+``` r
+#library(woRldnews)
+#newsapi_setup()
+```
 
-Authenticating the connection with the Newsapi API is done at the same
-time the woRldnews is initialized.
+Newsapi will assign you an apikey. You can save this apikey to your
+.Rprofile for future use by “newsapi_save_apikey” function.
 
-## Searchinng for headlines
+``` r
+#newsapi_apikey <- "paste_key_here"
+#newsapi_save_apikey(apikey = newsapi_apikey)
+```
 
-From the select boxes on the shiny.app, users select the country and
-category for the news search.
-<img src="./man/figures/headlines.png" width="40%" />
+## Using woRldnews
 
-In a table format, there are 20 top headlines with title, description,
-date, url, and url to image. By clicking on the urls and urltoimage
-links, users can access related websites.
+To do relevant searches, woRldnews features two “shiny” apps. To search
+for news, you use runshiny function:
 
-<img src="./man/figures/results.png" width="40%" />
+``` r
+#runshiny("headlines")
+```
 
-## Documentation
+When you run this function, you’ll receive the shiny widget below:
 
-woRldnews API v2.0 documentation
+![Search box](headlines.png)
+
+First you enter the apikey provided by newsapi.org. Then, from the
+select boxes on the shiny.app, you select the country and category for
+the news search. You receive the search results in a table format with
+20 top headlines including title, description, date, url, and url to
+image. By clicking the url you can access related websites.
+
+![Search results](./headlines.png)
+
+To search for articles, you use runshiny function:
+
+``` r
+#runshiny("articles")
+```
+
+When you run this function, you’ll receive the shiny widget below:
+
+![Search box](./articles.png)
+
+First you enter the apikey provided by newsapi.org. Then,from the select
+boxes on the shiny.app, you enter the keyword, select the language and
+sort by for the articles search. You can narrow the search to specific
+dates within the previous 30 days.  
+\`\`
+
+You receive the search results in a table format with 20 top headlines
+including title, description, content, url, author and publication date.
+
+![Search results](./articles_results.png)
 
 ## Vignettes
 
-Vignettes are long-form documentation that explore more in-depth
-concepts related to the package.
-
-    Introduction to woRldnews
+For more details, see the vignette.
 
 ## About Newsapi.org
 

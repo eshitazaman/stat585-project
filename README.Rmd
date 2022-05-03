@@ -14,8 +14,8 @@ output: github_document
 woRldnews can be installed with devtools to get the most recent production version from GitHub:
 
 ```{r}
-install.packages('devtools') # if devtools is not already installed
-devtools::install_github('eshitazaman/stat585-project')
+#install.packages('devtools') # if devtools is not already installed
+#devtools::install_github('eshitazaman/stat585-project')
 ```
 
 ## Examples and Usage
@@ -25,15 +25,15 @@ Welcome to woRldnews! Before you can search for news and articles in R, you'll n
 
 
 ```{r}
-library(woRldnews)
-newsapi_setup()
+#library(woRldnews)
+#newsapi_setup()
 ```
 
 Newsapi will assign you an apikey. You can save this apikey to your .Rprofile for future use by "newsapi_save_apikey" function. 
 
 ```{r}
-newsapi_apikey <- "paste_key_here"
-newsapi_save_apikey(apikey = newsapi_apikey)
+#newsapi_apikey <- "paste_key_here"
+#newsapi_save_apikey(apikey = newsapi_apikey)
 ```
 
 ## Using woRldnews
@@ -42,7 +42,7 @@ To do relevant searches, woRldnews features two  "shiny" apps.
 To search for news, you use runshiny function:
 
 ```{r}
-runshiny("headlines")
+#runshiny("headlines")
 ```
 
 When you run this function, you'll receive the shiny widget below: 
@@ -51,17 +51,17 @@ When you run this function, you'll receive the shiny widget below:
 
 First you enter the apikey provided by newsapi.org. Then, from the select boxes on the shiny.app, you select the country and category for the news search. You receive the search results in a table format with 20 top headlines including title, description, date, url, and url to image. By clicking the url you can access related websites. 
 
-![Search results](results.png)
+![Search results](./headlines.png)
 
 To search for articles, you use runshiny function:
 
 ```{r}
-runshiny("articles")
+#runshiny("articles")
 ```
 
 When you run this function, you'll receive the shiny widget below: 
 
-![Search box](articles.png)
+![Search box](./articles.png)
 
 First you enter the apikey provided by newsapi.org. Then,from the select boxes on the shiny.app, you enter the keyword, select the language and sort by for the articles search. You can narrow the search to specific dates within the previous 30 days.  
 ``
@@ -69,7 +69,7 @@ First you enter the apikey provided by newsapi.org. Then,from the select boxes o
 You receive the search results in a table format with 20 top headlines including title, description, content, url, author and publication date. 
 
 
-![Search results](articles_results.png)
+![Search results](./articles_results.png)
 
 ## Vignettes
 
