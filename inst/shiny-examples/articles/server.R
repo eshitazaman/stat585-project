@@ -11,12 +11,7 @@ server <- function(input, output) {
     if (input$go > numClicks) {
       numClicks <<- numClicks + 1
       print("Start new search")
-   
-    
-    
-    
-   
-  
+
  # output$articles <- DT::renderDataTable({
     apikey <- input$apikey
     text <- input$text
