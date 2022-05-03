@@ -4,7 +4,7 @@ output: github_document
 
 
  <!-- badges: start -->
-  [![Codecov test coverage](https://codecov.io/gh/eshitazaman/stat585-project/branch/main/graph/badge.svg)](https://app.codecov.io/gh/eshitazaman/stat585-project?branch=main)
+  [![codecov](https://codecov.io/gh/eshitazaman/stat585-project/branch/main/graph/badge.svg?token=DLtd2FbN76)](https://codecov.io/gh/eshitazaman/stat585-project)
   <!-- badges: end -->
   
 "woRldnews" is a R package that allows users to search for top news in 50 countries and millions of articles from over 80,000 large and small news sources and blogs in real time. Users can do relevant searches using two distinct "shiny" apps. Users may search top headlines in fifty countries with the first "shiny" app. Users can use the second app to search for articles that they are interested in fifteen languages. 
