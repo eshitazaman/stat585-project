@@ -1,12 +1,23 @@
 server <- function(input, output) {
-
+  numClicks <- 0
+  
   output$dateRangeText  <- renderText({
     paste("input$dateRange is",
           paste(as.character(input$dateRange), collapse = " &to= ")
     )
   })
   
-  output$articles <- DT::renderDataTable({
+  articles <- reactive({
+    if (input$go > numClicks) {
+      numClicks <<- numClicks + 1
+      print("Start new search")
+   
+    
+    
+    
+   
+  
+ # output$articles <- DT::renderDataTable({
     apikey <- input$apikey
     text <- input$text
     language <- c("ar","de", "en","es","fr", "he", "it","nl","no","pt", "ru", "se", "ud", "zh")[which(c("Arabic", "German", "English", "Spanish", "French",
@@ -85,10 +96,21 @@ server <- function(input, output) {
     }
     
     articles <-  everything_df(news)
-
-    articles<-DT::datatable(articles,options=list(lengthMenu = c(5, 2),pageLength=5))
+    
+    return(articles)
+    }
+    
+    
     
   })
+  
+  output$articles <- DT::renderDataTable({
+    DT::datatable(articles(), escape = FALSE)
+  })
+
+    #articles<-DT::datatable(articles,options=list(lengthMenu = c(5, 2),pageLength=5))
+    
+ # })
 }
 
 
