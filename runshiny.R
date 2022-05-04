@@ -22,3 +22,7 @@ runshiny <- function(choice) {
   shiny::runApp(appDir, display.mode = "normal")
 }
 
+
+
+
+

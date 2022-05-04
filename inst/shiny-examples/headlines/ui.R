@@ -4,7 +4,8 @@ shinyUI<- fluidPage(
   
   
   sidebarPanel(
-    textInput("text", label = h3("Enter apikey (if you haven't saved it in .Renviron)", value = "Enter apikeys...")),
+    selectInput("apikeymethod", "Choose how you will enter the API key", choices = c("Manually", "From .Renviron")),
+    textInput("apikey", label = h4("Enter apikey(if you prefferd to enter it manually)", value = "Enter apikey...")),
     selectInput("country", "Select Country", choices = c("United Arab Emirates", "Argentina", "Austria","Australia",
                                                          "Belgium", "Bulgaria", "Brazil", "Canada", "Switzerland",
                                                          "China", "Colombia", "Cuba",
