@@ -40,22 +40,22 @@ server <- function(input, output) {
       
       news <- httr::content(req_data, as = "parsed")    
       #headlines <- news_df(news)
-      news_to_df <- function(x) {
-        tibble(
-          name = x$title,
-          description = x$description,
-          date = x$publishedAt, # date is in days since Jan 1 1970
+      #news_to_df <- function(x) {
+        #tibble(
+         # name = x$title,
+          #description = x$description,
+          #date = x$publishedAt, # date is in days since Jan 1 1970
           #sex = x$sex,
           #id = x$id,
           #shelterID = x$shelterId,
-          url = x$url,
-          urlToImage = x$urlToImage
+          #url = x$url,
+          #urlToImage = x$urlToImage
           
-        )
-      }
+        #)
+      #}
       
       
-      headlines <- news$articles %>% purrr::map_df(news_to_df)
+      headlines <- news$articles %>% purrr::map_df(woRldnews::news_to_df)
       x1 <- headlines[,1]
       x2 <- headlines[,2]
       x3 <- headlines[,3]
