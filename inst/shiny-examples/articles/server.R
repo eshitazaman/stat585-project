@@ -30,24 +30,8 @@ server <- function(input, output) {
     news <- httr::content(req_data, as = "parsed")    
     
     articles <- news$articles %>% purrr::map_df(woRldnews::articles_df)
-    x1 <- articles[,1]
-    x2 <- articles[,2]
-    x3 <- articles[,3]
-    x4 <- articles[,4]
-    x5 <- articles[,5]
     
-    image <- c()
-    for (i in 1:dim(articles)[1]){
-      image <-c(image,paste0('<img src=',articles[i,5],' height=200','></img>'))
-    }
-    
-    urls <- c()
-    for (i in 1:dim(articles)[1]){
-      urls <-c(urls,paste0("<a href='",articles[i,4],"' target='_balank'>",articles[i,4], "</a>"))}
-    dat <- NULL
-    dat <- data.frame(x1,x2,x3,urls, image)
-
-    articles <-  dat
+    articles <- format_table(articles)
     
     return(articles)
     }

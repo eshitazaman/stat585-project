@@ -42,27 +42,12 @@ server <- function(input, output) {
 
       
       
-      headlines <- news$articles %>% purrr::map_df(woRldnews::headlines_df)
-      x1 <- headlines[,1]
-      x2 <- headlines[,2]
-      x3 <- headlines[,3]
-      x4 <- headlines[,4]
-      x5 <- headlines[,5]
       
-      Image <- c()
-      for (i in 1:dim(headlines)[1]){
-        image <-c(image,paste0('<img src=',headlines[i,5],' height=200','></img>'))
-      }
+      headlines <- news$articles %>% purrr::map_df(woRldnews::data_df)
       
-      Url <- c()
-      for (i in 1:dim(headlines)[1]){
-        urls <-c(urls,paste0("<a href='",headlines[i,4],"' target='_balank'>",headlines[i,4], "</a>"))}
-      dat <- NULL
-      dat <- data.frame(x1,x2,x3,Url, Image)
+      headlines<-format_table(headlines)
       
-      
-      
-      headlines<-dat
+     
       
       return(headlines)
     }

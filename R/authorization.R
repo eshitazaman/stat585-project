@@ -1,3 +1,9 @@
+#' Takes user to register for API key
+#'
+#' @return none
+#'
+#' @export
+
 newsapi_setup <- function() {
   request <- "Welcome to woRldnews! Before you can search for news or articles \n in R , you'll need to get an apikey from Newsapi  at \n https://www.newsapi.org. Would you like to do this now? (Selecting \n 'Yes' will open browser.)"
   
