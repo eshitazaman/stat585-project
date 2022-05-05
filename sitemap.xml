@@ -22,7 +22,7 @@
     <loc>https://eshitazaman.github.io/stat585-project/index.html</loc>
   </url>
   <url>
-    <loc>https://eshitazaman.github.io/stat585-project/reference/everything_df.html</loc>
+    <loc>https://eshitazaman.github.io/stat585-project/reference/articles_df.html</loc>
   </url>
   <url>
     <loc>https://eshitazaman.github.io/stat585-project/reference/get_API.html</loc>
@@ -31,12 +31,12 @@
     <loc>https://eshitazaman.github.io/stat585-project/reference/get_data.html</loc>
   </url>
   <url>
+    <loc>https://eshitazaman.github.io/stat585-project/reference/headlines_df.html</loc>
+  </url>
+  <url>
     <loc>https://eshitazaman.github.io/stat585-project/reference/index.html</loc>
   </url>
   <url>
     <loc>https://eshitazaman.github.io/stat585-project/reference/news_clean.html</loc>
-  </url>
-  <url>
-    <loc>https://eshitazaman.github.io/stat585-project/reference/news_to_df.html</loc>
   </url>
 </urlset>
