@@ -2,10 +2,22 @@
 % Please edit documentation in R/runshiny.R
 \name{runshiny}
 \alias{runshiny}
+<<<<<<< HEAD
 \title{Runs shiny app}
 \usage{
 runshiny()
 }
 \description{
 Runs shiny app
+=======
+\title{Run the shiny app that allows users to make search for articles and news headlines}
+\usage{
+runshiny(choice)
+}
+\arguments{
+\item{choice}{indicates the type of search (either article or headlines) a user want to make}
+}
+\description{
+Run the shiny app that allows users to make search for articles and news headlines
+>>>>>>> 226b58cd5ba49a181b13211486bcda58821dcd77
 }
