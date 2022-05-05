@@ -1,14 +1,7 @@
-
-#' Run the shiny app that allows users to make search for articles and news headlines
-#'
-#' @param choice indicates the type of search (either article or headlines) a user want to make
+#' Runs the shiny app that allows users to make search for articles and news headlines
 #'
 #' @import shiny
-#'
-#'
 #' @export
-
-
 
 
 runshiny <- function() {

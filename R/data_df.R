@@ -1,12 +1,8 @@
 #' Generates a tibble of news with title, description, published date, url and image url
 #'
 #' @param x is the parsed data
-#'
 #' @import tibble
-#'
-
-#' @return a tibble of news
-#'
+#' @return a tibble of news or aticles depending on the search
 #' @export
 
 data_df <- function(x) {

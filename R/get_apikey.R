@@ -1,7 +1,5 @@
 #' Takes user to register for API key
-#'
 #' @return none
-#'
 #' @export
 
 newsapi_setup <- function() {

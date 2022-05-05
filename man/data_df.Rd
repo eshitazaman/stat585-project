@@ -10,7 +10,7 @@ data_df(x)
 \item{x}{is the parsed data}
 }
 \value{
-a tibble of news
+a tibble of news or aticles depending on the search
 }
 \description{
 Generates a tibble of news with title, description, published date, url and image url
