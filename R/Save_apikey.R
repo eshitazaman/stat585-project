@@ -3,6 +3,7 @@
 #' @param apikey is the APIkey obtained from Newsapi.org
 #'
 #' @import usethis
+#' @import assertthat
 #'
 #'
 #' @export
