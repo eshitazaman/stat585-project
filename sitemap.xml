@@ -22,21 +22,21 @@
     <loc>https://eshitazaman.github.io/stat585-project/index.html</loc>
   </url>
   <url>
-    <loc>https://eshitazaman.github.io/stat585-project/reference/articles_df.html</loc>
+    <loc>https://eshitazaman.github.io/stat585-project/reference/data_df.html</loc>
   </url>
   <url>
-    <loc>https://eshitazaman.github.io/stat585-project/reference/get_API.html</loc>
-  </url>
-  <url>
-    <loc>https://eshitazaman.github.io/stat585-project/reference/get_data.html</loc>
-  </url>
-  <url>
-    <loc>https://eshitazaman.github.io/stat585-project/reference/headlines_df.html</loc>
+    <loc>https://eshitazaman.github.io/stat585-project/reference/format_table.html</loc>
   </url>
   <url>
     <loc>https://eshitazaman.github.io/stat585-project/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://eshitazaman.github.io/stat585-project/reference/news_clean.html</loc>
+    <loc>https://eshitazaman.github.io/stat585-project/reference/newsapi_setup.html</loc>
+  </url>
+  <url>
+    <loc>https://eshitazaman.github.io/stat585-project/reference/runshiny.html</loc>
+  </url>
+  <url>
+    <loc>https://eshitazaman.github.io/stat585-project/reference/save_apikey.html</loc>
   </url>
 </urlset>
