@@ -11,9 +11,6 @@
 
 
 
-# locate all the shiny app examples that exist
-
-
 runshiny <- function() {
   
   # find and launch the app
