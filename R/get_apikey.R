@@ -18,18 +18,3 @@ newsapi_setup <- function() {
     cat("After registering, you will be given a 'apikey'. You can use it \n to search for news and articles in a shiny.app.\n You can also choose to save them to your .Rprofile for later use with \n the function newsapi_save_credentials(apikey).")
   }
 }
-
-
-#### Function for saving apikey to .Renviron
-
-Save_apikey <- function(apikey = NULL) {
-  usethis::edit_r_environ('project')
-  apikey = apikey
-}
-
-
-newsapi_apikey <- "f8acc8a2a90845d5b57ab446ba1d9827"
-newsapi_save_apikey(apikey = newsapi_apikey)
-
-
-

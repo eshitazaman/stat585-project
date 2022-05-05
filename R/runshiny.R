@@ -1,3 +1,14 @@
+#' Run the shiny app that allows users to make search for articles and news headlines
+#'
+#' @param choice indicates the type of search (either article or headlines) a user want to make
+#'
+#' @import shiny
+#'
+#'
+#' @export
+
+
+
 runshiny <- function(choice) {
   # locate all the shiny app examples that exist
   validChoices <- list.files(system.file("shiny-examples", package = "woRldnews"))
