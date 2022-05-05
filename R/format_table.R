@@ -1,4 +1,13 @@
+#' Generates a tibble of news with title, description, published date, active url and image
+#'
+#' @param x is the parsed data
+#'
+#' @import tibble
+#'
 
+#' @return a tibble of news
+#'
+#' @export
 
 
 format_table <- function(x){
