@@ -1,6 +1,6 @@
 #' Runs the shiny app that allows users to make search for articles and news headlines
 #'
-#' @import shiny
+#' @importFrom shiny runApp
 #' @export
 
 

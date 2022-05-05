@@ -1,8 +1,8 @@
 #' Saves the apikey to project .Renviron for future use
 #'
 #' @param apikey is the APIkey obtained from Newsapi.org
-#' @import usethis
-#' @import assertthat
+#' @importFrom usethis edit_r_environ
+#' @importFrom assertthat assert_that
 #' @export
 
 save_apikey <- function(apikey = NULL) {

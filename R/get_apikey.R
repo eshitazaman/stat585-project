@@ -1,4 +1,6 @@
 #' Takes user to register for API key
+#' @importFrom usethis ui_yeah
+#' @importFrom utils browseURL
 #' @return none
 #' @export
 

@@ -64,4 +64,7 @@ For more details, see the [vignette](https://eshitazaman.github.io/stat585-proje
 The Newsapi.org is a basic, easy-to-use REST API that offers JSON search results for current and historical news stories from over 80,000 sources throughout the world. 
 
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/eshitazaman/stat585-project/workflows/R-CMD-check/badge.svg)](https://github.com/eshitazaman/stat585-project/actions)
+<!-- badges: end -->
 
