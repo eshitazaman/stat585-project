@@ -100,7 +100,7 @@ server <- function(input, output) {
         if(input$apikeymethod == "Manually") { req_data <- httr::GET(paste0(url, "everything?q=", keytext, "&language=",language,"&from=",paste(as.character(input$dateRange), collapse = "&to="), 
                                                                             "&apiKey=", input$apikey))} 
         else {req_data <- httr::GET(
-          paste0(url, "everything?q=", text, "&language=",language,"&from=",paste(as.character(input$dateRange), collapse = "&to="),"&apiKey=", Sys.getenv("apikey")))}
+          paste0(url, "everything?q=", keytext, "&language=",language,"&from=",paste0(as.character(input$dateRange), collapse = "&to="),"&apiKey=", Sys.getenv("apikey")))}
         
         news <- httr::content(req_data, as = "parsed")
         articles <- news$articles %>% purrr::map_df(woRldnews::data_df)
