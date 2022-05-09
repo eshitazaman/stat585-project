@@ -69,52 +69,48 @@
 <div class="section level2">
 <h2 id="examples-and-usage">Examples and Usage<a class="anchor" aria-label="anchor" href="#examples-and-usage"></a>
 </h2>
-<p>Welcome to woRldnews! Before you can search for news and articles in R, you’ll need to create a free account at [Newsapi.org] (<a href="https://newsapi.org" class="external-link uri">https://newsapi.org</a>) and acquire an apikey by using news_api function.</p>
+<p>Welcome to woRldnews! Before you can search for news and articles in R, you’ll need to create a free account at [Newsapi.org] (<a href="https://newsapi.org" class="external-link uri">https://newsapi.org</a>) and acquire an apikey by using “get_apikey” function.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#library(woRldnews)</span>
-<span class="co">#newsapi_setup()</span></code></pre></div>
-<p>Newsapi will assign you an apikey. You can save this apikey to your .Rprofile for future use by “newsapi_save_apikey” function.</p>
+<span class="co">#get_apikey()</span></code></pre></div>
+<p>Newsapi will assign you an apikey. You can save this apikey to .Renviron file for future use. “save_apikey” function creates a project .Renviron file and save your apikey in it.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#newsapi_apikey &lt;- "paste_key_here"</span>
-<span class="co">#newsapi_save_apikey(apikey = newsapi_apikey)</span></code></pre></div>
+<code class="sourceCode R"><span class="co">#save_apikey(apikey)</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="using-worldnews">Using woRldnews<a class="anchor" aria-label="anchor" href="#using-worldnews"></a>
 </h2>
-<p>To do relevant searches, woRldnews features two “shiny” apps. To search for news, you use runshiny function:</p>
+<p>To do relevant searches, you use runshiny function:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#runshiny("headlines")</span></code></pre></div>
+<code class="sourceCode R"><span class="co">#runshiny()</span></code></pre></div>
 <p>When you run this function, you’ll receive the shiny widget below:</p>
 <div class="figure">
-<img src="./reference/figures/headlines.png" alt=""><p class="caption">Search box</p>
+<img src="./reference/figures/shiny_interface.png" alt=""><p class="caption">Search box</p>
 </div>
-<p>First you enter the apikey provided by newsapi.org. Then, from the select boxes on the shiny.app, you select the country and category for the news search. You receive the search results in a table format with 20 top headlines including title, description, date, url, and url to image. By clicking the url you can access related websites.</p>
+<p>If user selects, “Top-headlines”, they will see the interface as following:</p>
 <div class="figure">
-<img src="./reference/figures/articles.png" alt=""><p class="caption">Search results</p>
+<img src="./reference/figures/headlines_ui.png" alt=""><p class="caption">Search box</p>
 </div>
-<p>To search for articles, you use runshiny function:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#runshiny("articles")</span></code></pre></div>
-<p>When you run this function, you’ll receive the shiny widget below:</p>
+<p>Choose between “articles” and “top headlines” in the first box to determine the sort of search you wish to conduct. Then choose between “Manually” and “From.Renviron” from the second box to enter the apikey. If you want to search for articles, enter the term, choose the language, and sort by. You can limit your search to certain dates in the last 30 days. You receive the search results in a table format with 20 articles including title, description, content, url, author and publication date. If you want to search for headlines, enter the country, and choose the country. You receive the search results in a table format with 20 top headlines including title, description, content, url, author and publication date. By clicking the url you can access related websites.</p>
 <div class="figure">
-<img src="./reference/figures/results.png" alt=""><p class="caption">Search box</p>
+<img src="./reference/figures/topheadlines.png" alt=""><p class="caption">Search box</p>
 </div>
-<p>First you enter the apikey provided by newsapi.org. Then,from the select boxes on the shiny.app, you enter the keyword, select the language and sort by for the articles search. You can narrow the search to specific dates within the previous 30 days.<br>
-``</p>
-<p>You receive the search results in a table format with 20 top headlines including title, description, content, url, author and publication date.</p>
+<p>Above it the sample search results of top-headlines on sports in the USA.</p>
 <div class="figure">
-<img src="./reference/figures/articles_results.png" alt=""><p class="caption">Search results</p>
+<img src="./reference/figures/articles.png" alt=""><p class="caption">Search box</p>
 </div>
+<p>Above is the sample search results of articles on the keyword “tesla” in the time period of last 30 days.</p>
 </div>
 <div class="section level2">
 <h2 id="vignettes">Vignettes<a class="anchor" aria-label="anchor" href="#vignettes"></a>
 </h2>
-<p>For more details, see the <a href="./articles/index.html">vignette</a>.</p>
+<p>For more details, see the <a href="https://eshitazaman.github.io/stat585-project/articles/newsAPI.html">vignette</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="about-newsapiorg">About Newsapi.org<a class="anchor" aria-label="anchor" href="#about-newsapiorg"></a>
 </h2>
 <p>The Newsapi.org is a basic, easy-to-use REST API that offers JSON search results for current and historical news stories from over 80,000 sources throughout the world.</p>
+<!-- badges: start --><!-- badges: end -->
 </div>
 
   </main><aside class="col-md-3"><div class="license">
@@ -144,6 +140,7 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://codecov.io/gh/eshitazaman/stat585-project" class="external-link"><img src="https://codecov.io/gh/eshitazaman/stat585-project/branch/main/graph/badge.svg?token=DLtd2FbN76" alt="codecov"></a></li>
+<li><a href="https://github.com/eshitazaman/stat585-project/actions" class="external-link"><img src="https://github.com/eshitazaman/stat585-project/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
 
