@@ -4,6 +4,7 @@ output: github_document
 
 
  <!-- badges: start -->
+ [![R-CMD-check](https://github.com/eshitazaman/stat585-project/workflows/R-CMD-check/badge.svg)](https://github.com/eshitazaman/stat585-project/actions)
   [![codecov](https://codecov.io/gh/eshitazaman/stat585-project/branch/main/graph/badge.svg?token=DLtd2FbN76)](https://codecov.io/gh/eshitazaman/stat585-project)
   <!-- badges: end -->
   
@@ -45,16 +46,25 @@ To do relevant searches,  you use runshiny function:
 
 When you run this function, you'll receive the shiny widget below: 
 
-![Search box](./images/shiny_interface.png)
+![Search box](./man/figures/shiny_interface.png)
+
+If user selects, "Top-headlines", they will see the interface as following: 
+
+
+![Search box](./man/figures/headlines_ui.png)
 
 Choose between "articles" and "top headlines" in the first box to determine the sort of search you wish to conduct. Then choose between "Manually" and "From.Renviron" from the second box to enter the apikey. 
 If you want to search for articles, enter the term, choose the language, and sort by. You can limit your search to certain dates in the last 30 days. You receive the search results in a table format with 20 articles including title, description, content, url, author and publication date. If you want to search for headlines, enter the country, and choose the country. You receive the search results in a table format with 20 top headlines including title, description, content, url, author and publication date. By clicking the url you can access related websites. 
 
-![Search box](./images/results.png)
+![Search box](./man/figures/topheadlines.png)
+
+Above it the sample search results of top-headlines on sports in the USA. 
 
 
-
-
+![Search box](./man/figures/articles.png)
+ 
+ Above is the sample search results of articles on the keyword "tesla" in the time period of last 30 days.
+ 
 ## Vignettes
 
 For more details, see the [vignette](https://eshitazaman.github.io/stat585-project/articles/newsAPI.html).
@@ -64,7 +74,5 @@ For more details, see the [vignette](https://eshitazaman.github.io/stat585-proje
 The Newsapi.org is a basic, easy-to-use REST API that offers JSON search results for current and historical news stories from over 80,000 sources throughout the world. 
 
 
-<!-- badges: start -->
-[![R-CMD-check](https://github.com/eshitazaman/stat585-project/workflows/R-CMD-check/badge.svg)](https://github.com/eshitazaman/stat585-project/actions)
-<!-- badges: end -->
+
 

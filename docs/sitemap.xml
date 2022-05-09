@@ -22,6 +22,12 @@
     <loc>https://eshitazaman.github.io/stat585-project/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://eshitazaman.github.io/stat585-project/reference/data_df.html</loc>
+  </url>
+  <url>
+    <loc>https://eshitazaman.github.io/stat585-project/reference/format_table.html</loc>
+  </url>
+  <url>
     <loc>https://eshitazaman.github.io/stat585-project/reference/get_API.html</loc>
   </url>
   <url>
@@ -31,6 +37,15 @@
     <loc>https://eshitazaman.github.io/stat585-project/reference/index.html</loc>
   </url>
   <url>
+    <loc>https://eshitazaman.github.io/stat585-project/reference/newsapi_setup.html</loc>
+  </url>
+  <url>
     <loc>https://eshitazaman.github.io/stat585-project/reference/news_clean.html</loc>
+  </url>
+  <url>
+    <loc>https://eshitazaman.github.io/stat585-project/reference/runshiny.html</loc>
+  </url>
+  <url>
+    <loc>https://eshitazaman.github.io/stat585-project/reference/save_apikey.html</loc>
   </url>
 </urlset>

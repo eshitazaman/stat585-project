@@ -33,18 +33,6 @@ In this package, you will get to know
 + Example
 + Shiny app
 
-## Getting started with the package
-
-
-
-## Registering for the API key
-
-
-
-## Functions
-
-
-
 
 ## Shiny app
 
